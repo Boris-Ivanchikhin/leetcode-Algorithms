@@ -10,12 +10,12 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #include_directories(src)
 
 set(SOURCE_FILES
-	main.cpp
+	Code/main.cpp
     )
 
 file(GLOB SOURCES
-	*.h
-	*.cpp
+	Code/*.h
+	Code/*.cpp
 #	include/*.h
 #	src/*.cpp
 	)
