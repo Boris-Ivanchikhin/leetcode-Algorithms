@@ -23,15 +23,15 @@ int minPathSum(vector<vector<int>>& grid) {
     for (int i = 0; i < m; ++i) {
         for (int j = 0; j < n; ++j) {
             // Инициализация значений from_top и from_left
-            int from_top = (i > 0) ? dp[i - 1][j] : std::numeric_limits<int>::max();
-            int from_left = (j > 0) ? dp[i][j - 1] : std::numeric_limits<int>::max();
+            int from_top = (i > 0) ? dp[i - 1][j] : numeric_limits<int>::max();
+            int from_left = (j > 0) ? dp[i][j - 1] : numeric_limits<int>::max();
 
             if (i == 0 && j == 0) {
                 // Если мы в левом верхнем углу, просто присваиваем значение ячейки grid
                 dp[i][j] = grid[i][j];
             } else {
                 // Иначе, выбираем минимум из значений from_top и from_left и добавляем текущее значение grid
-                dp[i][j] = grid[i][j] + std::min(from_top, from_left);
+                dp[i][j] = grid[i][j] + min(from_top, from_left);
             }
         }
     }
@@ -45,11 +45,11 @@ int main()
 {
     SetConsoleOutputCP(CP_UTF8);
 
-    Timer T("Go!");
+    Timer T("Turtle");
 
     // Пример использования
-    std::vector<std::vector<int>> grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-    std::cout << "Min path sum: " << minPathSum(grid) << std::endl;
+    vector<vector<int>> grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+    cout << "Min path sum: " << minPathSum(grid) << endl;
 
     T.print();
 
